@@ -20,4 +20,5 @@ y2 = float(input("\ty2 = "))
 print("Уравнение прямой, проходящей через эти точки:")
 k = (y1 - y2) / (x1 - x2)
 b = y2 - k*x2
-print(" y = %.2f*x + %.2f" % (k, b))
+print(' y = {0:.2f} * x + {1:.2f}'.format(k, b))
+#print(" y = %.2f*x + %.2f" % (k, b))
