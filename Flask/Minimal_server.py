@@ -1,8 +1,8 @@
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask(__name__)    # Экземпляр класса Flask
 
-@app.route('/')
+@app.route('/')    # Декоратор URL
 def home():
     return 'Hello World!'
 
