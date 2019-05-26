@@ -11,5 +11,9 @@ def home():
 def home2():
     return 'Hello User!'
 
+@app.route('/hello/<user>')    # <str:user> по умолчанию все аргументы str (Передает аргумент user в url пути)
+def home3(user):
+    return 'Hello, User: ' + user
+
 if __name__ == '__main__':
     app.run()
