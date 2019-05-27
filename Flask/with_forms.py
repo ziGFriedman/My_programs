@@ -7,9 +7,13 @@ from wtforms import validators
 
 class ContactForm(FlaskForm):
     name = StringField(label='Name', validators=[validators.Length(min=4, max=25)])    # ожидает в форме значения по названию переменных
-    email = StringField(label='E-mail', validators=[validators.Length(min=6, max=35), validators.Email()])
+    email = StringField(label='E-mail', validators=[validators.Length(min=6, max=35),
+        validators.Email()    # правильность записи емайла
+        ])
 # Можно валидировать множество форм
-    job = StringField(validators=[validators.Length(min=2, max=4)])
+    job = StringField(validators=[validators.Length(min=0, max=4),
+        validators.Required()    # указывает поле, обязательное для заполнения
+        ])
 
 app = Flask(__name__)
 app.config.update(DEBUG=True, SECRET_KEY='This key must be secret!', WTF_CSRF_ENABLED=False)
