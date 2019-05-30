@@ -1,5 +1,6 @@
 from contextlib import contextmanager
 
+'''Декоратор превращает генератор в контекст менеджер'''
 @contextmanager
 def do_work(value):
     print('some work before, __enter__')
