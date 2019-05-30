@@ -2,10 +2,10 @@ from contextlib import contextmanager
 
 '''Декоратор превращает генератор в контекст менеджер'''
 @contextmanager
-def do_work(value):
-    print('some work before, __enter__')
-    yield value
-    print('some work after, __exit__')
+def do_work(filname):
+    f = open(__file__)
+    yield f
+    f.close()
 
 with do_work(14) as w:
     print(w)
