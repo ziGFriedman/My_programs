@@ -15,7 +15,7 @@ arr = []
 for i in range(30):
     x = int(random.random() * 100)
     arr.append(x)
-    print('{}'.format(x), end = ' ')
+    print('{}'.format(x), end=' ')
     if (i + 1) % 5 == 0:
         print()
 
