@@ -11,6 +11,6 @@ def syracuse(n: int):
             n = n // 2
         else:
             n = (3 * n + 1) // 2
-        print(n, end = ' ')
+        print(n, end=' ')
 
 syracuse(56)
