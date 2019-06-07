@@ -4,9 +4,9 @@ def digit(n):
         print('Ноль - однозначное число')
     else:
         if n > 0:
-            print('Положительное', end = ' ')
+            print('Положительное', end=' ')
         else:
-            print('Отрицательное', end = ' ')
+            print('Отрицательное', end=' ')
         if abs(n) < 10:
             print("однозначное число")
         elif (10 <= abs(n) < 100):
