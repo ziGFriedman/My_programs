@@ -22,7 +22,7 @@ class ContactForm(FlaskForm):
 app = Flask(__name__)
 app.config.update(DEBUG=True, SECRET_KEY='This key must be secret!',
     WTF_CSRF_ENABLED=False)
-# app.config.update(DEBUG=True) перезапускает сервер при изменении кода 
+# app.config.update(DEBUG=True) перезапускает сервер при изменении кода (режим отладки)
 
 # форма обязательно наследуется от класса с параметром FlaskFrom
 @app.route('/', methods=['GET', 'POST'])
