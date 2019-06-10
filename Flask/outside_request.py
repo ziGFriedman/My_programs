@@ -10,7 +10,7 @@ app.config.update(DEBUG=True, SECRET_KEY=os.environ['SECRET_KEY'])
 @app.route('/', methods=['GET', 'POST'])
 def home():
     raise ValueError('Test!')
-    return 'Hello World!', 200
+    return ('Hello World!', 200)
 
 if __name__ == '__main__':
     app.run()
