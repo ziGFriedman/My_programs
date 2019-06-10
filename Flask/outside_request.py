@@ -1,8 +1,11 @@
 from flask import Flask
 from flask import request
+import os
 
 app = Flask(__name__)
-app.confug(DEBUG=True, SECRET_KEY='some secret!')
+app.config.update(DEBUG=True, SECRET_KEY=os.environ['SECRET_KEY'])
+# перед запуском сервера, необходимо в консоле указать значение секретного ключа,
+# например SECRET_KEY = secret
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -11,4 +14,3 @@ def home():
 
 if __name__ == '__main__':
     app.run()
-    
