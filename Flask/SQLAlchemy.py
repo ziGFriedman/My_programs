@@ -42,8 +42,12 @@ def index():
     by_job = Person.query.filter(Person.job == 'HR')
 
     # And not so easy for others:
-    sub = db.session.query(func.min(Person.age).label('min_age')).subquery()
-    youngest = Person.query.join(sub, sub.c.min_age == Person.age).first()
+    sub = db.session.query(
+        func.min(Person.age).label('min_age')
+    ).subquery()
+    youngest = Person.query.join(
+        sub, sub.c.min_age == Person.age
+    ).first()
 
     return jsonify({
         'people': [p.to_json() for p in people],
