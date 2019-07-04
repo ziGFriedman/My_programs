@@ -10,8 +10,8 @@ app.config.update(
     SECRET_KEY='should always be secret',
 
     # Database settings:
-    SQLALCHEMY_DATABASE_URL='sqlite:///people.db',
-    SQLALCHEMY_TRACK_MODIFICATION=False,
+    SQLALCHEMY_DATABASE_URI='sqlite:///people.db',
+    SQLALCHEMY_TRACK_MODIFICATIONS=False,
 
     WTF_CSRF_ENABLED=False
 )
@@ -36,7 +36,7 @@ class Person(db.Model):
 @app.route('/')
 def index():
     # It is pretty easy for some tasks:
-    people = Pesron.query.all()
+    people = Person.query.all()
     by_name = Person.query.filter_by(name='Sveta').first()
     by_age = Person.query.filter(Person.age >= 30)
     by_job = Person.query.filter(Person.job == 'HR')
@@ -71,3 +71,6 @@ if __name__ == '__main__':
     db.session.add(semen)
     db.session.add(kolya)
     db.session.commit()    # note
+
+    # Running app:
+    app.run()
