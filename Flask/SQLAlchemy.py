@@ -32,3 +32,42 @@ class Person(db.Model):
             'age': self.age,
             'job': self.job
         }
+
+@app.route('/')
+def index():
+    # It is pretty easy for some tasks:
+    people = Pesron.query.all()
+    by_name = Person.query.filter_by(name='Sveta').first()
+    by_age = Person.query.filter(Person.age >= 30)
+    by_job = Person.query.filter(Person.job == 'HR')
+
+    # And not so easy for others:
+    sub = db.session.query(func.min(Person.age).label('min_age')).subquery()
+    youngest = Person.query.join(sub, sub.c.min_age == Person.age).first()
+
+    return jsonify({
+        'people': [p.to_json() for p in people],
+        'by_name': by_name.to_json(),
+        'by_age': [p.to_json() for p in by_age],
+        'by_job': [p.to_json() for p in by_job],
+
+        'youngest': youngest.to_json(),
+    })
+
+if __name__ == '__main__':
+    db.create_all()
+
+    # Deleting all records:
+    Person.query.delete()
+
+    # Creating new ones:
+    ivan = Person(name='Ivan', age=3)
+    sveta = Person(name='Sveta', age=30, job='HR')
+    semen = Person(name='Semen', age=32, job='IT')
+    kolya = Person(name='Kolya', age=23, job='HR')
+
+    db.session.add(ivan)
+    db.session.add(sveta)
+    db.session.add(semen)
+    db.session.add(kolya)
+    db.session.commit()    # note
