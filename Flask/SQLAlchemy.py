@@ -2,7 +2,7 @@ from flask import Flask
 from flask import jsonify
 from sqlalchemy.sql import func
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 app.config.update(
     DEBUG=True,
     SECRET_KEY='should always be secret',
@@ -13,3 +13,4 @@ app.config.update(
 
     WTF_CSRF_ENABLED=False
 )
+db = SQLAlchemy(app)
