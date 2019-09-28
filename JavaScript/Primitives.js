@@ -99,3 +99,9 @@ var iterable = ['a', 2, 'b', 4, 5];
 for (var item in iterable) {
   console.log(item, iterable[item]);
 }
+
+// Цикл с пост-условием
+var s = 0;
+do {
+  console.log(s++);
+} while (s < 4);
