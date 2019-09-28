@@ -21,5 +21,16 @@ console.log(1 === 1.0);
 var x;    // Объявление переменной
 console.log(x);
 
-x = null;
+x = null;    // Инициализация переменной
 console.log(x);
+
+// Objects:
+var obj = {property: 'value'};
+console.log(obj.property);
+console.log(obj['property']);
+console.log(typeof(obj),obj);
+
+var array = [obj, obj];
+console.log(typeof(array), array);
+
+// Mutability
