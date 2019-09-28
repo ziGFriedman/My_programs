@@ -33,4 +33,15 @@ var MyClass = function (title) {
   }
 
   privateFunction();
-}
+
+  this.runPrivate = function () {
+    privateFunction();
+  };
+
+  this.runPrivateWithCall = function () {
+    privateFunction.call(this);
+    privateFunction.apply(this, []);
+  };
+};
+
+var = o new MyClass ('Some title');
