@@ -54,3 +54,48 @@ Number('14');    // Приводит строку к числу
 Boolean(x && x.length);    // Приведение к булевому типу
 
 String(123);    // Приведение к строке
+
+// Конструкции языка
+
+var x = 1 === 1 ? 'true' : 'false'    // Проверка условия, х=1 == 1 ?
+
+// Условие if всегда в скобках
+if (true) {
+  console.log('123')
+}
+
+var (!flag) {
+  console.log('if');
+} else if (flag && 1 < 2) {    // || - or. && - and
+  console.log('elseif');
+} else {
+  // do nothing
+}
+
+var ternary = 40 > 13 ? 'yes' : 'no';
+console.log(ternary);
+
+// Проверка входного значения
+var value = '123';
+
+switch (value) {
+  case '321':
+    console.log('1');
+    break;
+  case '123':
+    console.log('2');
+    break;
+  default:
+    console.log('other');
+    break;
+}
+
+// Цикл
+for (var i = 0; i < 10; i++) {    // ++i, i++ - приоритет операций: +1 +i, i + 1
+  console.log(i);
+}
+
+var iterable = ['a', 2, 'b', 4, 5];
+for (var item in iterable) {
+  console.log(item, iterable[item]);
+}
