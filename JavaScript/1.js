@@ -34,3 +34,9 @@ var array = [obj, obj];
 console.log(typeof(array), array);
 
 // Mutability
+var obj = {property: 'value'};
+var newObject = obj;
+newObject.newProperty = 'new value';
+newObject.property = 'replace';
+
+console.log(newObject, obj);
