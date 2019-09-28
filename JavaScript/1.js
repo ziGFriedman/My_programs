@@ -40,3 +40,9 @@ newObject.newProperty = 'new value';
 newObject.property = 'replace';
 
 console.log(newObject, obj);
+
+// Добавление переменных
+var v = [];
+v.push('1');
+v.push('2');
+console.log(v);
