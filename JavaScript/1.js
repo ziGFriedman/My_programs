@@ -1,5 +1,9 @@
 'use strict';    // Ставится в начале файла для строгово режима ввода Js
 
+// Подключение файла со скриптами
+<script src="/js/script1.js"></script>;
+<script src="/js/script2.js"></script>;
+
 // Primitives;
 var str = "A string";
 var alsoString = 'A string';    // Запись переменных
@@ -13,3 +17,9 @@ var num2 = 2.0;
 
 console.log(num1 * num2);
 console.log(1 === 1.0);
+
+var x;    // Объявление переменной
+console.log(x);
+
+x = null;
+console.log(x);
