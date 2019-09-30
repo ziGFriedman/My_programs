@@ -6,11 +6,12 @@ function (window, document) {
       'red',
       'grey',
       'black',
+      'blue',
       'orange'
     ];
 
     var color = colors [
-      Math.floor(Math.random() * colors.length)
+      Math.floor(Math.random() * colors.length)    // Случайное число от 0 до 4 (по кол-ву цветов)
     ];
 
     var texts = document.querySelector('.texts');    // compare with querySelectorAll
