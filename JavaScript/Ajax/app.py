@@ -48,7 +48,7 @@ def crossdomain(origin=None, methods=None, headers=None,
         return update_wrapper(wrapped_function, f)
     return decorator
 
-
+# Асинхронный запрос к странице (нет перезагрузки страницы)
 @app.route('/ajax/<result>')
 @crossdomain('*')
 def ajax_method(result):
