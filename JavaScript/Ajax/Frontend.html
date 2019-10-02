@@ -33,8 +33,26 @@
           dataType: 'json'
         });
 
-        
+        request.done(function (data, textStatus, jqXHR) {
+          console.log(data, textStatus, jqXHR);
+          var result = $('<li>').addClass('success').text('+1');
+          results.append(result);
+        });
+
+        request.fail(function (jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR, textStatus, errorThrown);
+          var result = $('<li>').addClass('failed').text('=(');
+          result.append(result);
+        });
       }
-    })
+
+      $(document).ready(function() {
+        var params = ['success', 'other'];
+        $('#make-request').click(function() {
+          sendRequest(params[Math.round(Math.random())]);
+        });
+      });
+    })(window, document, jQuery);
+  </script>
   </body>
 </html>
