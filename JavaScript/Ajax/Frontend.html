@@ -2,9 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>title</title>
   </head>
-  <body>
 
+  <style>
+    .success {
+      background-color: green;
+    }
+    .failed {
+      background-color: red;
+    }
+  </style>
+  <body>
+    <div class="requests">
+      <ul class="results"></ul>
+      <button id="make-request">Request</button>
+    </div>
+  <script type="application/javascript" src="https://unpkg.com/jquery@3.2.0"></script>
+  <script type="application/javascript">
+    'use strict';
+
+    (function (window, document, $) {
+      function sendRequest(perem) {
+        var result = $('.result', '.requests');
+        // var result = $('.requests').find('.results');
+
+        var request = $.ajax({
+          url: 'http://127.0.0.1:5000/ajax/' + param,
+          crossDomain: true,
+          dataType: 'json'
+        });
+
+        
+      }
+    })
   </body>
 </html>
