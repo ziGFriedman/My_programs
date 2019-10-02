@@ -44,7 +44,7 @@
         request.fail(function (jqXHR, textStatus, errorThrown) {
           console.log(jqXHR, textStatus, errorThrown);
           var result = $('<li>').addClass('failed').text('=(');
-          result.append(result);
+          results.append(result);
         });
       }
 
