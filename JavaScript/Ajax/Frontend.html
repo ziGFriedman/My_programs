@@ -13,18 +13,20 @@
       background-color: red;
     }
   </style>
+
   <body>
     <div class="requests">
       <ul class="results"></ul>
       <button id="make-request">Request</button>
     </div>
+
   <script type="application/javascript" src="https://unpkg.com/jquery@3.2.0"></script>
   <script type="application/javascript">
     'use strict';
 
     (function (window, document, $) {
       function sendRequest(param) {
-        var result = $('.result', '.requests');
+        var results = $('.results', '.requests');
         // var result = $('.requests').find('.results');
 
         var request = $.ajax({
