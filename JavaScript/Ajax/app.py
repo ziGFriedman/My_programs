@@ -27,7 +27,7 @@ def crossdomain(origin=None, methods=None, headers=None,
         return options_resp.headers['allow']
 
     def decorator(f):
-        def wrepped_function(*args, **kwargs):
+        def wrapped_function(*args, **kwargs):
             if automatic_options and request.method == 'OPTIONS':
                 resp = current_app.make_default_options_response()
             else:
